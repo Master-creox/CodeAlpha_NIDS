@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+alerts.log
+alerts.db
+blocked_ips.txt
+dashboard.html
