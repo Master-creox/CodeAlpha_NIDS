@@ -42,6 +42,8 @@ packets (live interface or .pcap file)
 | `generate_sample_traffic.py` | Builds `sample_traffic.pcap` (normal + attack traffic) |
 | `sample_traffic.pcap` | Test traffic — no root needed to try the NIDS |
 | `dashboard.py` | Reads `alerts.db`, builds a standalone HTML dashboard |
+| `test-run.png` | Screenshot: terminal test run (7 alerts + summary) |
+| `test-summary.png` | Screenshot: test results summary card |
 | `snort-setup.md` | How to install Snort + the equivalent Snort rules |
 | `requirements.txt` | `scapy>=2.5.0` |
 | `README.md` | This file |
@@ -113,6 +115,15 @@ By default the NIDS only **simulates** the block: it writes the IP to
 ```bash
 sudo python3 nids.py --pcap sample_traffic.pcap --enforce
 ```
+
+## Test results
+
+Offline run against `sample_traffic.pcap` — 100 packets, 7 alerts, all 6
+rules triggered, 5 IPs blocked, no false positives.
+
+![NIDS test run — terminal output](test-run.png)
+
+![NIDS test results — summary](test-summary.png)
 
 ## How the detection works
 
